@@ -15,3 +15,14 @@
     text-decoration: none;
     color: #000;
 }
+
+:host>ul li .desc{
+    height:0;
+    overflow: hidden;
+    padding:0 15px;
+    transition: 0.35s ease-in-out;
+}
+
+:host>ul li.show .desc{
+    padding:10px 15px;
+}
