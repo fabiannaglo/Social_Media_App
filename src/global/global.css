@@ -75,3 +75,22 @@ bottom-bar{
     border-top: 1px solid #eee;
     background-color: #fff;
 }
+
+/* Like Page */
+.like-page{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 45px 0 0;
+    background-color: #fff;
+    transition: 0.15s ease-in-out;
+    z-index: 10;
+    overflow: scroll;
+}
+
+.like-page.open{
+    right: 0;
+}

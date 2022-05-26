@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface BottomBar {
     }
+    interface LikePage {
+        "likeName": string;
+        "likeType": string;
+    }
     interface MsgPage {
     }
     interface NavbarElem {
@@ -22,6 +26,12 @@ declare global {
     var HTMLBottomBarElement: {
         prototype: HTMLBottomBarElement;
         new (): HTMLBottomBarElement;
+    };
+    interface HTMLLikePageElement extends Components.LikePage, HTMLStencilElement {
+    }
+    var HTMLLikePageElement: {
+        prototype: HTMLLikePageElement;
+        new (): HTMLLikePageElement;
     };
     interface HTMLMsgPageElement extends Components.MsgPage, HTMLStencilElement {
     }
@@ -43,6 +53,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "bottom-bar": HTMLBottomBarElement;
+        "like-page": HTMLLikePageElement;
         "msg-page": HTMLMsgPageElement;
         "navbar-elem": HTMLNavbarElemElement;
         "side-bar": HTMLSideBarElement;
@@ -50,6 +61,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface BottomBar {
+    }
+    interface LikePage {
+        "likeName"?: string;
+        "likeType"?: string;
     }
     interface MsgPage {
     }
@@ -60,6 +75,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "bottom-bar": BottomBar;
+        "like-page": LikePage;
         "msg-page": MsgPage;
         "navbar-elem": NavbarElem;
         "side-bar": SideBar;
@@ -70,6 +86,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "bottom-bar": LocalJSX.BottomBar & JSXBase.HTMLAttributes<HTMLBottomBarElement>;
+            "like-page": LocalJSX.LikePage & JSXBase.HTMLAttributes<HTMLLikePageElement>;
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
             "navbar-elem": LocalJSX.NavbarElem & JSXBase.HTMLAttributes<HTMLNavbarElemElement>;
             "side-bar": LocalJSX.SideBar & JSXBase.HTMLAttributes<HTMLSideBarElement>;
