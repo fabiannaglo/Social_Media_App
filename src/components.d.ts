@@ -8,6 +8,12 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface BottomBar {
     }
+    interface HomePost {
+        "hpBild": string;
+        "hpDesc": string;
+        "hpName": string;
+        "hpPost": string;
+    }
     interface LikePage {
         "likeName": string;
         "likeType": string;
@@ -26,6 +32,12 @@ declare global {
     var HTMLBottomBarElement: {
         prototype: HTMLBottomBarElement;
         new (): HTMLBottomBarElement;
+    };
+    interface HTMLHomePostElement extends Components.HomePost, HTMLStencilElement {
+    }
+    var HTMLHomePostElement: {
+        prototype: HTMLHomePostElement;
+        new (): HTMLHomePostElement;
     };
     interface HTMLLikePageElement extends Components.LikePage, HTMLStencilElement {
     }
@@ -53,6 +65,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "bottom-bar": HTMLBottomBarElement;
+        "home-post": HTMLHomePostElement;
         "like-page": HTMLLikePageElement;
         "msg-page": HTMLMsgPageElement;
         "navbar-elem": HTMLNavbarElemElement;
@@ -61,6 +74,13 @@ declare global {
 }
 declare namespace LocalJSX {
     interface BottomBar {
+    }
+    interface HomePost {
+        "hpBild"?: string;
+        "hpDesc"?: string;
+        "hpName"?: string;
+        "hpPost"?: string;
+        "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
     interface LikePage {
         "likeName"?: string;
@@ -75,6 +95,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "bottom-bar": BottomBar;
+        "home-post": HomePost;
         "like-page": LikePage;
         "msg-page": MsgPage;
         "navbar-elem": NavbarElem;
@@ -86,6 +107,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "bottom-bar": LocalJSX.BottomBar & JSXBase.HTMLAttributes<HTMLBottomBarElement>;
+            "home-post": LocalJSX.HomePost & JSXBase.HTMLAttributes<HTMLHomePostElement>;
             "like-page": LocalJSX.LikePage & JSXBase.HTMLAttributes<HTMLLikePageElement>;
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
             "navbar-elem": LocalJSX.NavbarElem & JSXBase.HTMLAttributes<HTMLNavbarElemElement>;
