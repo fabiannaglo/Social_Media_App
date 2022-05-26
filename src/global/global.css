@@ -67,7 +67,6 @@ msg-page{
     right: -100%;
     height: 100%;
     width: 100%;
-    max-width: 100%;
     padding: 45px 0 0;
     background-color: #fff;
     transition: 0.15s ease-in-out;
@@ -86,7 +85,6 @@ msg-page.open{
     left:-100%;
     height: 100%;
     width: 100%;
-    max-width: 100%;
     padding:45px 0 0;
     background-color: #eee;
     transition: 0.15s ease-in-out;
@@ -116,7 +114,6 @@ bottom-bar{
     right: -100%;
     height: 100%;
     width: 100%;
-    max-width: 100%;
     padding: 45px 0 0;
     background-color: #fff;
     transition: 0.15s ease-in-out;
@@ -266,10 +263,8 @@ main .container{
 }
 
 .hp-content .actions .action-btn svg{
-    max-height: 20px;
-    max-width: 20px;
-    width: auto;
-    height: auto;
+    width: 20px;
+    height: 20px;
 }
 
 .hp-content .actions .action-btn.action-like svg.liked{
