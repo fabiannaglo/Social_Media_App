@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
+    <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
+    <title>Suche | social.</title>
+    <script type="text/javascript" src="/ON-your-styleguide/script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <nav class="navbar subnav">
+        <div class="container">
+            <navbar-elem onclick-prop="sidebar"></navbar-elem>
+            <navbar-elem onclick-prop="back"></navbar-elem>
+
+            <div class="logo">social.</div>
+
+            <navbar-elem onclick-prop="msg"></navbar-elem>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <side-bar></side-bar>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="search">
+                <div class="search-input">
+                    <label htmlFor="search">Suche</label>
+                    
+                    <search-bar></search-bar>
+                </div>
+
+                <div class="search-results"></div>
+            </div>
+        </div>
+    </main>
+
+    <div class="user-page">
+        <div class="container"></div>
+    </div>
+
+    <bottom-bar></bottom-bar>
+
+    <div class="user-page">
+        <div class="container"></div>
+    </div>
+
+    <msg-page></msg-page>
+
+    <div class="like-page">
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="follow"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="follow"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="follow"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="follow"></like-page>
+        <like-page like-name="Botan Mustafa" like-type="like"></like-page>
+    </div>
+
+</body>
+
+</html>
