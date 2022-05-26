@@ -1,0 +1,11 @@
+:host{
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+:host>svg{
+    height: 24px;
+    width: auto;
+}

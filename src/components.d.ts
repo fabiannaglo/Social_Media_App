@@ -8,6 +8,9 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MsgPage {
     }
+    interface NavbarElem {
+        "onclickProp": string;
+    }
     interface SideBar {
     }
 }
@@ -18,6 +21,12 @@ declare global {
         prototype: HTMLMsgPageElement;
         new (): HTMLMsgPageElement;
     };
+    interface HTMLNavbarElemElement extends Components.NavbarElem, HTMLStencilElement {
+    }
+    var HTMLNavbarElemElement: {
+        prototype: HTMLNavbarElemElement;
+        new (): HTMLNavbarElemElement;
+    };
     interface HTMLSideBarElement extends Components.SideBar, HTMLStencilElement {
     }
     var HTMLSideBarElement: {
@@ -26,16 +35,21 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "msg-page": HTMLMsgPageElement;
+        "navbar-elem": HTMLNavbarElemElement;
         "side-bar": HTMLSideBarElement;
     }
 }
 declare namespace LocalJSX {
     interface MsgPage {
     }
+    interface NavbarElem {
+        "onclickProp"?: string;
+    }
     interface SideBar {
     }
     interface IntrinsicElements {
         "msg-page": MsgPage;
+        "navbar-elem": NavbarElem;
         "side-bar": SideBar;
     }
 }
@@ -44,6 +58,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
+            "navbar-elem": LocalJSX.NavbarElem & JSXBase.HTMLAttributes<HTMLNavbarElemElement>;
             "side-bar": LocalJSX.SideBar & JSXBase.HTMLAttributes<HTMLSideBarElement>;
         }
     }
