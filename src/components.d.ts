@@ -6,12 +6,30 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BottomBar {
+    }
+    interface LikePage {
+        "likeName": string;
+        "likeType": string;
+    }
     interface MsgPage {
     }
     interface PostMenu {
     }
 }
 declare global {
+    interface HTMLBottomBarElement extends Components.BottomBar, HTMLStencilElement {
+    }
+    var HTMLBottomBarElement: {
+        prototype: HTMLBottomBarElement;
+        new (): HTMLBottomBarElement;
+    };
+    interface HTMLLikePageElement extends Components.LikePage, HTMLStencilElement {
+    }
+    var HTMLLikePageElement: {
+        prototype: HTMLLikePageElement;
+        new (): HTMLLikePageElement;
+    };
     interface HTMLMsgPageElement extends Components.MsgPage, HTMLStencilElement {
     }
     var HTMLMsgPageElement: {
@@ -25,16 +43,26 @@ declare global {
         new (): HTMLPostMenuElement;
     };
     interface HTMLElementTagNameMap {
+        "bottom-bar": HTMLBottomBarElement;
+        "like-page": HTMLLikePageElement;
         "msg-page": HTMLMsgPageElement;
         "post-menu": HTMLPostMenuElement;
     }
 }
 declare namespace LocalJSX {
+    interface BottomBar {
+    }
+    interface LikePage {
+        "likeName"?: string;
+        "likeType"?: string;
+    }
     interface MsgPage {
     }
     interface PostMenu {
     }
     interface IntrinsicElements {
+        "bottom-bar": BottomBar;
+        "like-page": LikePage;
         "msg-page": MsgPage;
         "post-menu": PostMenu;
     }
@@ -43,6 +71,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "bottom-bar": LocalJSX.BottomBar & JSXBase.HTMLAttributes<HTMLBottomBarElement>;
+            "like-page": LocalJSX.LikePage & JSXBase.HTMLAttributes<HTMLLikePageElement>;
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
             "post-menu": LocalJSX.PostMenu & JSXBase.HTMLAttributes<HTMLPostMenuElement>;
         }

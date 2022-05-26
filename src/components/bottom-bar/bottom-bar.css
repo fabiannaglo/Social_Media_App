@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+}
+
+:host{
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+:host>svg{
+    height: 24px;
+    width: auto;
+}
+
+
+.bottom-bar{
+    height: 100%;
+    position: relative;
+}
+
+.add-menu{
+    position: absolute;
+    bottom:50px;
+    width: 80%;
+    left:0;
+    right: 0;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: #222;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.15s ease-in-out;
+}
+
+.add-menu.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.add-menu::before{
+    content:'';
+    position: absolute;
+    bottom:-5px;
+    left:0;
+    right:0;
+    margin:0 auto;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 5px solid #333;
+}
+
+.add-menu-elem{
+    padding:15px 20px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    transition: 0.15s ease-in-out;
+}
+
+.add-menu-elem:hover,
+.add-menu-elem:focus,
+.add-menu-elem:active{
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.add-menu-elem + .add-menu-elem{
+    border-top: 1px solid #333;
+}
+
+
+.bottom-bar .container{
+    height: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.bottom-icon{
+    height: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-icon svg{
+    height: 24px;
+    width: 24px;
+}

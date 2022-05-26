@@ -1,0 +1,23 @@
+.like-elem{
+    padding:15px;
+    border-bottom: 1px solid #bbb;
+}
+
+.like-elem.le-follow{
+    background-color: #ffe6f7;
+}
+
+.like-icon svg{
+    height: 15px;
+    fill: var(--main-color);
+    width: auto;
+    margin-right: 10px;
+}
+
+.like-name{
+    font-weight: 600;
+}
+
+.like-val{
+    margin-left: 3px;
+}
