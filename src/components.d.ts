@@ -23,6 +23,8 @@ export namespace Components {
     interface NavbarElem {
         "onclickProp": string;
     }
+    interface PostMenu {
+    }
     interface SideBar {
     }
 }
@@ -57,6 +59,12 @@ declare global {
         prototype: HTMLNavbarElemElement;
         new (): HTMLNavbarElemElement;
     };
+    interface HTMLPostMenuElement extends Components.PostMenu, HTMLStencilElement {
+    }
+    var HTMLPostMenuElement: {
+        prototype: HTMLPostMenuElement;
+        new (): HTMLPostMenuElement;
+    };
     interface HTMLSideBarElement extends Components.SideBar, HTMLStencilElement {
     }
     var HTMLSideBarElement: {
@@ -69,6 +77,7 @@ declare global {
         "like-page": HTMLLikePageElement;
         "msg-page": HTMLMsgPageElement;
         "navbar-elem": HTMLNavbarElemElement;
+        "post-menu": HTMLPostMenuElement;
         "side-bar": HTMLSideBarElement;
     }
 }
@@ -91,6 +100,8 @@ declare namespace LocalJSX {
     interface NavbarElem {
         "onclickProp"?: string;
     }
+    interface PostMenu {
+    }
     interface SideBar {
     }
     interface IntrinsicElements {
@@ -99,6 +110,7 @@ declare namespace LocalJSX {
         "like-page": LikePage;
         "msg-page": MsgPage;
         "navbar-elem": NavbarElem;
+        "post-menu": PostMenu;
         "side-bar": SideBar;
     }
 }
@@ -111,6 +123,7 @@ declare module "@stencil/core" {
             "like-page": LocalJSX.LikePage & JSXBase.HTMLAttributes<HTMLLikePageElement>;
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
             "navbar-elem": LocalJSX.NavbarElem & JSXBase.HTMLAttributes<HTMLNavbarElemElement>;
+            "post-menu": LocalJSX.PostMenu & JSXBase.HTMLAttributes<HTMLPostMenuElement>;
             "side-bar": LocalJSX.SideBar & JSXBase.HTMLAttributes<HTMLSideBarElement>;
         }
     }
