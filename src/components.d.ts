@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MsgPage {
     }
+    interface SideBar {
+    }
 }
 declare global {
     interface HTMLMsgPageElement extends Components.MsgPage, HTMLStencilElement {
@@ -16,15 +18,25 @@ declare global {
         prototype: HTMLMsgPageElement;
         new (): HTMLMsgPageElement;
     };
+    interface HTMLSideBarElement extends Components.SideBar, HTMLStencilElement {
+    }
+    var HTMLSideBarElement: {
+        prototype: HTMLSideBarElement;
+        new (): HTMLSideBarElement;
+    };
     interface HTMLElementTagNameMap {
         "msg-page": HTMLMsgPageElement;
+        "side-bar": HTMLSideBarElement;
     }
 }
 declare namespace LocalJSX {
     interface MsgPage {
     }
+    interface SideBar {
+    }
     interface IntrinsicElements {
         "msg-page": MsgPage;
+        "side-bar": SideBar;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +44,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
+            "side-bar": LocalJSX.SideBar & JSXBase.HTMLAttributes<HTMLSideBarElement>;
         }
     }
 }
