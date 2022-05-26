@@ -44,6 +44,18 @@ nav{
     overflow: hidden;
 }
 
+nav navbar-elem[onclick-prop="back"]{
+    display: none;
+}
+
+nav.subnav navbar-elem[onclick-prop="sidebar"]{
+    display: none;
+}
+
+nav.subnav navbar-elem[onclick-prop="back"]{
+    display: block;
+}
+
 nav .container{
     height: 100%;
     display: -ms-flexbox;
