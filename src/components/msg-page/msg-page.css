@@ -1,0 +1,66 @@
+.inner{
+    padding:15px 15px 60px;
+}
+
+
+.message{
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.message + .message{
+    margin-top: 15px;
+}
+
+.image{
+    line-height: 0;
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.image .login-icon{
+    position: absolute;
+    bottom:-5px;
+    right:-5px;
+    width: 13px;
+    height: 13px;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.image .login-icon.login-off{
+    background-color: #ddd;
+}
+
+.image .login-icon.login-on{
+    background-color: #78de45;
+}
+
+.image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.content{
+    padding-left: 15px;
+}
+
+.content .title{
+    font-weight: 600;
+}
+
+.content .subtitle{
+    color: #999;
+    margin-top: 2px;
+    font-size: 14px;
+}
