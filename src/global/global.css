@@ -388,3 +388,22 @@ post-menu.open{
     opacity: 1;
     visibility: visible !important;
 }
+
+/* Share Post */
+share-post{
+    position: fixed;
+    bottom:-100%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    transition: 0.25s ease-in-out;
+    overflow: hidden;
+}
+
+share-post.open{
+    bottom:45px;
+}
