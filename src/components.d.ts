@@ -29,6 +29,11 @@ export namespace Components {
     }
     interface SideBar {
     }
+    interface UserPage {
+        "upBild": string;
+        "upDesc": string;
+        "upName": string;
+    }
 }
 declare global {
     interface HTMLBottomBarElement extends Components.BottomBar, HTMLStencilElement {
@@ -79,6 +84,12 @@ declare global {
         prototype: HTMLSideBarElement;
         new (): HTMLSideBarElement;
     };
+    interface HTMLUserPageElement extends Components.UserPage, HTMLStencilElement {
+    }
+    var HTMLUserPageElement: {
+        prototype: HTMLUserPageElement;
+        new (): HTMLUserPageElement;
+    };
     interface HTMLElementTagNameMap {
         "bottom-bar": HTMLBottomBarElement;
         "home-post": HTMLHomePostElement;
@@ -88,6 +99,7 @@ declare global {
         "post-menu": HTMLPostMenuElement;
         "share-post": HTMLSharePostElement;
         "side-bar": HTMLSideBarElement;
+        "user-page": HTMLUserPageElement;
     }
 }
 declare namespace LocalJSX {
@@ -115,6 +127,11 @@ declare namespace LocalJSX {
     }
     interface SideBar {
     }
+    interface UserPage {
+        "upBild"?: string;
+        "upDesc"?: string;
+        "upName"?: string;
+    }
     interface IntrinsicElements {
         "bottom-bar": BottomBar;
         "home-post": HomePost;
@@ -124,6 +141,7 @@ declare namespace LocalJSX {
         "post-menu": PostMenu;
         "share-post": SharePost;
         "side-bar": SideBar;
+        "user-page": UserPage;
     }
 }
 export { LocalJSX as JSX };
@@ -138,6 +156,7 @@ declare module "@stencil/core" {
             "post-menu": LocalJSX.PostMenu & JSXBase.HTMLAttributes<HTMLPostMenuElement>;
             "share-post": LocalJSX.SharePost & JSXBase.HTMLAttributes<HTMLSharePostElement>;
             "side-bar": LocalJSX.SideBar & JSXBase.HTMLAttributes<HTMLSideBarElement>;
+            "user-page": LocalJSX.UserPage & JSXBase.HTMLAttributes<HTMLUserPageElement>;
         }
     }
 }
