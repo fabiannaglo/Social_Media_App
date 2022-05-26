@@ -6,64 +6,17 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface BottomBar {
-    }
-    interface HomePost {
-        "hpBild": string;
-        "hpDesc": string;
-        "hpName": string;
-        "hpPost": string;
-    }
-    interface LikePage {
-        "likeName": string;
-        "likeType": string;
-    }
     interface MsgPage {
-    }
-    interface NavbarElem {
-        "onclickProp": string;
-    }
-    interface PostMenu {
     }
     interface SideBar {
     }
 }
 declare global {
-    interface HTMLBottomBarElement extends Components.BottomBar, HTMLStencilElement {
-    }
-    var HTMLBottomBarElement: {
-        prototype: HTMLBottomBarElement;
-        new (): HTMLBottomBarElement;
-    };
-    interface HTMLHomePostElement extends Components.HomePost, HTMLStencilElement {
-    }
-    var HTMLHomePostElement: {
-        prototype: HTMLHomePostElement;
-        new (): HTMLHomePostElement;
-    };
-    interface HTMLLikePageElement extends Components.LikePage, HTMLStencilElement {
-    }
-    var HTMLLikePageElement: {
-        prototype: HTMLLikePageElement;
-        new (): HTMLLikePageElement;
-    };
     interface HTMLMsgPageElement extends Components.MsgPage, HTMLStencilElement {
     }
     var HTMLMsgPageElement: {
         prototype: HTMLMsgPageElement;
         new (): HTMLMsgPageElement;
-    };
-    interface HTMLNavbarElemElement extends Components.NavbarElem, HTMLStencilElement {
-    }
-    var HTMLNavbarElemElement: {
-        prototype: HTMLNavbarElemElement;
-        new (): HTMLNavbarElemElement;
-    };
-    interface HTMLPostMenuElement extends Components.PostMenu, HTMLStencilElement {
-    }
-    var HTMLPostMenuElement: {
-        prototype: HTMLPostMenuElement;
-        new (): HTMLPostMenuElement;
     };
     interface HTMLSideBarElement extends Components.SideBar, HTMLStencilElement {
     }
@@ -72,45 +25,17 @@ declare global {
         new (): HTMLSideBarElement;
     };
     interface HTMLElementTagNameMap {
-        "bottom-bar": HTMLBottomBarElement;
-        "home-post": HTMLHomePostElement;
-        "like-page": HTMLLikePageElement;
         "msg-page": HTMLMsgPageElement;
-        "navbar-elem": HTMLNavbarElemElement;
-        "post-menu": HTMLPostMenuElement;
         "side-bar": HTMLSideBarElement;
     }
 }
 declare namespace LocalJSX {
-    interface BottomBar {
-    }
-    interface HomePost {
-        "hpBild"?: string;
-        "hpDesc"?: string;
-        "hpName"?: string;
-        "hpPost"?: string;
-        "onExampleEvent"?: (event: CustomEvent<string>) => void;
-    }
-    interface LikePage {
-        "likeName"?: string;
-        "likeType"?: string;
-    }
     interface MsgPage {
-    }
-    interface NavbarElem {
-        "onclickProp"?: string;
-    }
-    interface PostMenu {
     }
     interface SideBar {
     }
     interface IntrinsicElements {
-        "bottom-bar": BottomBar;
-        "home-post": HomePost;
-        "like-page": LikePage;
         "msg-page": MsgPage;
-        "navbar-elem": NavbarElem;
-        "post-menu": PostMenu;
         "side-bar": SideBar;
     }
 }
@@ -118,12 +43,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "bottom-bar": LocalJSX.BottomBar & JSXBase.HTMLAttributes<HTMLBottomBarElement>;
-            "home-post": LocalJSX.HomePost & JSXBase.HTMLAttributes<HTMLHomePostElement>;
-            "like-page": LocalJSX.LikePage & JSXBase.HTMLAttributes<HTMLLikePageElement>;
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
-            "navbar-elem": LocalJSX.NavbarElem & JSXBase.HTMLAttributes<HTMLNavbarElemElement>;
-            "post-menu": LocalJSX.PostMenu & JSXBase.HTMLAttributes<HTMLPostMenuElement>;
             "side-bar": LocalJSX.SideBar & JSXBase.HTMLAttributes<HTMLSideBarElement>;
         }
     }
