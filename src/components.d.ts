@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BottomBar {
+    }
     interface MsgPage {
     }
     interface NavbarElem {
@@ -15,6 +17,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLBottomBarElement extends Components.BottomBar, HTMLStencilElement {
+    }
+    var HTMLBottomBarElement: {
+        prototype: HTMLBottomBarElement;
+        new (): HTMLBottomBarElement;
+    };
     interface HTMLMsgPageElement extends Components.MsgPage, HTMLStencilElement {
     }
     var HTMLMsgPageElement: {
@@ -34,12 +42,15 @@ declare global {
         new (): HTMLSideBarElement;
     };
     interface HTMLElementTagNameMap {
+        "bottom-bar": HTMLBottomBarElement;
         "msg-page": HTMLMsgPageElement;
         "navbar-elem": HTMLNavbarElemElement;
         "side-bar": HTMLSideBarElement;
     }
 }
 declare namespace LocalJSX {
+    interface BottomBar {
+    }
     interface MsgPage {
     }
     interface NavbarElem {
@@ -48,6 +59,7 @@ declare namespace LocalJSX {
     interface SideBar {
     }
     interface IntrinsicElements {
+        "bottom-bar": BottomBar;
         "msg-page": MsgPage;
         "navbar-elem": NavbarElem;
         "side-bar": SideBar;
@@ -57,6 +69,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "bottom-bar": LocalJSX.BottomBar & JSXBase.HTMLAttributes<HTMLBottomBarElement>;
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
             "navbar-elem": LocalJSX.NavbarElem & JSXBase.HTMLAttributes<HTMLNavbarElemElement>;
             "side-bar": LocalJSX.SideBar & JSXBase.HTMLAttributes<HTMLSideBarElement>;
