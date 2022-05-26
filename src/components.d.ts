@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MsgPage {
     }
+    interface PostMenu {
+    }
 }
 declare global {
     interface HTMLMsgPageElement extends Components.MsgPage, HTMLStencilElement {
@@ -16,15 +18,25 @@ declare global {
         prototype: HTMLMsgPageElement;
         new (): HTMLMsgPageElement;
     };
+    interface HTMLPostMenuElement extends Components.PostMenu, HTMLStencilElement {
+    }
+    var HTMLPostMenuElement: {
+        prototype: HTMLPostMenuElement;
+        new (): HTMLPostMenuElement;
+    };
     interface HTMLElementTagNameMap {
         "msg-page": HTMLMsgPageElement;
+        "post-menu": HTMLPostMenuElement;
     }
 }
 declare namespace LocalJSX {
     interface MsgPage {
     }
+    interface PostMenu {
+    }
     interface IntrinsicElements {
         "msg-page": MsgPage;
+        "post-menu": PostMenu;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +44,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "msg-page": LocalJSX.MsgPage & JSXBase.HTMLAttributes<HTMLMsgPageElement>;
+            "post-menu": LocalJSX.PostMenu & JSXBase.HTMLAttributes<HTMLPostMenuElement>;
         }
     }
 }
