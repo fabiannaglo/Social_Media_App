@@ -62,9 +62,9 @@ export class sideBar {
               <a onClick={()=>this.openContent("impressum")}>Impressum</a>
               
               <div class="desc">
-                <p>social. <br/>
-                   Social Straße 1 <br/>
-                   00000 Socialstadt</p>
+                <p>SQUIRREL <br/>
+                   Eichhörnchenstraße 1 <br/>
+                   00000 Nussbaum</p>
               </div>
             </li>
             <li id="datenschutz">

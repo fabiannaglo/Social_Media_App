@@ -116,7 +116,6 @@ export class homePost {
                 }
             }
 
-
             output = "<span>" + descText + "</span>";
             output += hashtagLinks;
         }
