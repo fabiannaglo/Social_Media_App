@@ -10,9 +10,7 @@ export class homePost {
     @Prop() hpPost: string; 
     @Prop() hpDesc: string;
 
-
     @Element() el: HTMLHomePostElement;    
-
 
     likePost(el: any){
         el.classList.toggle("liked");
@@ -25,7 +23,6 @@ export class homePost {
         commentField.select();
 
         console.log(commentField);
-
     }
 
     sendComment(el: any){
@@ -102,7 +99,7 @@ export class homePost {
         const anzahl = Math.floor(Math.random() * (800 - 5 + 1) + 5);
 
         let desc = this.hpDesc;
-        let output = "a";
+        let output = "";
 
         if(this.hpDesc.includes("#")){
             let descText = this.hpDesc.replace(/\b #\S+/ig,"");
@@ -110,9 +107,6 @@ export class homePost {
             let hashtags:any = this.hpDesc.replace(descText, '');
             hashtags = hashtags.replace(/ /g, '');
             hashtags = hashtags.split('#');
-
-            console.log(hashtags);
-;
 
             let hashtagLinks = "";
 
