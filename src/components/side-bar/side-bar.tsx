@@ -13,21 +13,24 @@ export class sideBar {
   openContent(elemID: string){
     let elem = this.el.shadowRoot.getElementById(elemID) as HTMLElement;
 
+    console.log(  elemID);
+
     let all = this.el.shadowRoot.querySelectorAll("li");
 
     for(let i=0; i<all.length; i++){
-      all[i].classList.remove("show");
-      
       let thisDesc = all[i].querySelector(".desc") as HTMLDivElement;
 
-      console.log(thisDesc);
-      thisDesc.style.height = "0px";
+      if(thisDesc.parentElement.id != elemID){
+        thisDesc.style.height = "0px";
+        thisDesc.classList.remove("show");
+      }
     }
 
     let desc = elem.querySelector(".desc") as HTMLDivElement;
     
     if(desc.classList.contains("show")){
       desc.classList.remove("show");
+      desc.style.height = "0px";
     }
     else{
       desc.classList.add("show");
