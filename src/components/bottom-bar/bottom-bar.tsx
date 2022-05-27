@@ -9,24 +9,65 @@ import { Component, h } from '@stencil/core';
 export class bottomBar {
 
     goToUserpage(){
-        console.log("Userseite");
+        this.closeOthers();
+        document.body.classList.add('no-scroll');
+
+        const userpage = document.querySelector(".user-page");
+        const container = userpage.querySelector(".container");
+        container.innerHTML = '<user-page up-name="Botan Mustafa" up-bild="botanmustafa.jpg" up-desc="Ich bin hohl wie ein Stück<br />💩 Schaihsse<br /><br />Und ich esse Kanarienvögel zum Frühstück.<br />Folgt mir bitte, ich bin armseelig."></user-page>';
+
+        userpage.classList.add("open");
+
+        const navbar = document.querySelector('nav.navbar') as HTMLElement;
+        navbar.classList.add("subnav");
     }
 
     goToHome(){
-        console.log("Homeseite");
-    }
-
-    openLikePage(){
-        console.log("Likeseite");
-    }
-
-    openSearch(){
-        console.log("Suchfunktion");
+        window.location.href = "/ON-your-styleguide/index.html";
     }
 
     openAddMenu(elem: MouseEvent){
-        console.log("AddMenu");
-        console.log(elem);
+        let element = this.getParent(elem.target);
+
+        let bottomBar = element.parentElement.parentElement;
+        let addMenu = bottomBar.children[0];
+
+        addMenu.classList.toggle("open");
+    }
+
+    closeOthers(){
+        let likePage = document.querySelector(".like-page");
+        let sidebar = document.querySelector(".sidebar");
+        let msgPage = document.querySelector("msg-page");
+        let userPage = document.querySelector(".user-page");
+
+        likePage.classList.remove("open");
+        sidebar.classList.remove("open");
+        msgPage.classList.remove("open");
+        userPage.classList.remove("open");
+    }
+
+    openLikePage(){
+        this.closeOthers();
+        let likePage = document.querySelector(".like-page");
+
+        likePage.classList.toggle("open");
+    }
+
+    getParent(elem: any){
+        if(!elem.classList.contains("bottom-icon")){
+            elem = elem.parentElement;
+
+            if(!elem.classList.contains("bottom-icon")){
+                elem = elem.parentElement;
+            }
+            
+            return elem;
+        }
+    }
+
+    openSearch(){
+        window.location.href = "/ON-your-styleguide/suche.html";
     }
 
     render() {
