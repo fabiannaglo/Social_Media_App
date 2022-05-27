@@ -60,53 +60,51 @@ export class userPage {
 
         return (
             <Host>
+                <div class="userpage">
+                    <div class="up-head">
+                        <div class="image">
+                            <img src={imgPath} />
+                        </div>
+                        <div class="username">
+                            <div class="name">{this.upName}</div>
+                            <div class="follow-btn" onClick={(e)=>this.followUser(e)}>Folgen</div>
+                        </div>
+                    </div>
+                    <div class="up-content">
+                        <div class="up-name">{this.upName}</div>
+                        <div class="up-title">{title}</div>
+                        <div class="up-desc" innerHTML={this.upDesc}></div>
+                    </div>
+                    <div class="up-stats">
+                        <div class="up-stat">
+                            <div class="up-stat-val">
+                                10
+                            </div>
+                            <div class="up-stat-text">
+                                Beiträge
+                            </div>
+                        </div>
 
-            <div class="userpage">
-                <div class="up-head">
-                    <div class="image">
-                        <img src={imgPath} />
+                        <div class="up-stat">
+                            <div class="up-stat-val">
+                                {follower}
+                            </div>
+                            <div class="up-stat-text">
+                                Follower
+                            </div>
+                        </div>
+
+                        <div class="up-stat">
+                            <div class="up-stat-val">
+                                {following}
+                            </div>
+                            <div class="up-stat-text">
+                                abonniert
+                            </div>
+                        </div>
                     </div>
-                    <div class="username">
-                        <div class="name">{this.upName}</div>
-                        <div class="follow-btn" onClick={(e)=>this.followUser(e)}>Folgen</div>
-                    </div>
+                    <div class="up-posts" innerHTML={userPosts}></div>
                 </div>
-                <div class="up-content">
-                    <div class="up-name">{this.upName}</div>
-                    <div class="up-title">{title}</div>
-                    <div class="up-desc" innerHTML={this.upDesc}></div>
-                </div>
-                <div class="up-stats">
-                    <div class="up-stat">
-                        <div class="up-stat-val">
-                            12
-                        </div>
-                        <div class="up-stat-text">
-                            Beiträge
-                        </div>
-                    </div>
-
-                    <div class="up-stat">
-                        <div class="up-stat-val">
-                            {follower}
-                        </div>
-                        <div class="up-stat-text">
-                            Follower
-                        </div>
-                    </div>
-
-                    <div class="up-stat">
-                        <div class="up-stat-val">
-                            {following}
-                        </div>
-                        <div class="up-stat-text">
-                            abonniert
-                        </div>
-                    </div>
-                </div>
-                <div class="up-posts" innerHTML={userPosts}></div>
-            </div>
-
             </Host>
         );
     }
