@@ -1,4 +1,4 @@
-import { Component, Prop, h, Event, EventEmitter, Host, Element} from '@stencil/core';
+import { Component, Prop, h, Host, Element} from '@stencil/core';
 
 @Component({
   tag: 'home-post',
@@ -7,27 +7,15 @@ export class homePost {
     
     @Prop() hpName: string;
     @Prop() hpBild: string;
-    @Prop() hpPost: string;
+    @Prop() hpPost: string; 
     @Prop() hpDesc: string;
 
 
-    @Event() exampleEvent: EventEmitter<string>;
     @Element() el: HTMLHomePostElement;    
 
 
     likePost(el: any){
-        console.log(el);
         el.classList.toggle("liked");
-        /*
-        let evt = event as MouseEvent;
-
-        console.log(evt);
-        console.log(el);
-
-        if(evt.buttons == 1){
-            el.classList.toggle("liked");
-        }
-        */
     }
 
     showComments(el: any){

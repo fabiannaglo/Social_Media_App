@@ -119,7 +119,6 @@ declare namespace LocalJSX {
         "hpDesc"?: string;
         "hpName"?: string;
         "hpPost"?: string;
-        "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
     interface LikePage {
         "likeName"?: string;
